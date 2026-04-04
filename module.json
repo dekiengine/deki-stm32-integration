@@ -1,7 +1,8 @@
 {
-  "id": "deki:stm32-hal",
+  "id": "deki-stm32-hal",
   "displayName": "STM32 Integration",
   "buildDefine": "DEKI_MODULE_STM32_HAL",
+  "requires": [],
   "features": [],
   "dependencies": {}
 }
