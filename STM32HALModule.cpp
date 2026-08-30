@@ -1,6 +1,6 @@
-#include "STM32HALModule.h"
+#include "STM32HALPackage.h"
 #include "interop/DekiPlugin.h"
-#include "DekiModuleFeatureMeta.h"
+#include "DekiPackageFeatureMeta.h"
 #include "reflection/ComponentRegistry.h"
 #include "reflection/ComponentFactory.h"
 
@@ -53,13 +53,13 @@ DEKI_STM32_HAL_API int DekiSTM32HAL_EnsureRegistered(void)
 
 DEKI_PLUGIN_API const char* DekiPlugin_GetName(void)
 {
-    return "Deki STM32 HAL Module";
+    return "Deki STM32 HAL Package";
 }
 
 DEKI_PLUGIN_API const char* DekiPlugin_GetVersion(void)
 {
-#ifdef DEKI_MODULE_VERSION
-    return DEKI_MODULE_VERSION;
+#ifdef DEKI_PACKAGE_VERSION
+    return DEKI_PACKAGE_VERSION;
 #else
     return "0.0.0-dev";
 #endif
@@ -96,7 +96,7 @@ DEKI_PLUGIN_API void DekiPlugin_RegisterComponents(void)
 }
 
 // =============================================================================
-// Module Feature API
+// Package Feature API
 // =============================================================================
 
 DEKI_PLUGIN_API int DekiPlugin_GetFeatureCount(void)
@@ -104,14 +104,14 @@ DEKI_PLUGIN_API int DekiPlugin_GetFeatureCount(void)
     return 0;
 }
 
-DEKI_PLUGIN_API const DekiModuleFeatureInfo* DekiPlugin_GetFeature(int index)
+DEKI_PLUGIN_API const DekiPackageFeatureInfo* DekiPlugin_GetFeature(int index)
 {
     (void)index;
     return nullptr;
 }
 
 // =============================================================================
-// Module-specific feature API
+// Package-specific feature API
 // =============================================================================
 
 DEKI_STM32_HAL_API const char* DekiSTM32HAL_GetName(void)
@@ -124,7 +124,7 @@ DEKI_STM32_HAL_API int DekiSTM32HAL_GetFeatureCount(void)
     return 0;
 }
 
-DEKI_STM32_HAL_API const DekiModuleFeatureInfo* DekiSTM32HAL_GetFeature(int index)
+DEKI_STM32_HAL_API const DekiPackageFeatureInfo* DekiSTM32HAL_GetFeature(int index)
 {
     (void)index;
     return nullptr;
