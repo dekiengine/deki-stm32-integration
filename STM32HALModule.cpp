@@ -1,6 +1,5 @@
 #include "STM32HALPackage.h"
 #include "interop/DekiPlugin.h"
-#include "DekiPackageFeatureMeta.h"
 #include "reflection/ComponentRegistry.h"
 #include "reflection/ComponentFactory.h"
 
@@ -65,11 +64,6 @@ DEKI_PLUGIN_API const char* DekiPlugin_GetVersion(void)
 #endif
 }
 
-DEKI_PLUGIN_API const char* DekiPlugin_GetReflectionJson(void)
-{
-    return "{}";
-}
-
 DEKI_PLUGIN_API int DekiPlugin_Init(void)
 {
     return 0;
@@ -96,38 +90,12 @@ DEKI_PLUGIN_API void DekiPlugin_RegisterComponents(void)
 }
 
 // =============================================================================
-// Package Feature API
-// =============================================================================
-
-DEKI_PLUGIN_API int DekiPlugin_GetFeatureCount(void)
-{
-    return 0;
-}
-
-DEKI_PLUGIN_API const DekiPackageFeatureInfo* DekiPlugin_GetFeature(int index)
-{
-    (void)index;
-    return nullptr;
-}
-
-// =============================================================================
 // Package-specific feature API
 // =============================================================================
 
 DEKI_STM32_HAL_API const char* DekiSTM32HAL_GetName(void)
 {
     return "STM32 HAL";
-}
-
-DEKI_STM32_HAL_API int DekiSTM32HAL_GetFeatureCount(void)
-{
-    return 0;
-}
-
-DEKI_STM32_HAL_API const DekiPackageFeatureInfo* DekiSTM32HAL_GetFeature(int index)
-{
-    (void)index;
-    return nullptr;
 }
 
 } // extern "C"
