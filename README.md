@@ -1,17 +1,5 @@
-# Deki STM32 Integration
+# deki-stm32-integration (retired)
 
-STM32 platform HAL (Hardware Abstraction Layer) for the Deki Engine.
-
-Part of the [Deki Engine](https://github.com/ATeam-Dekiru/deki-engine) package ecosystem.
-
-## Installation
-
-Install via the Package Manager inside the Deki Editor.
-
-## Dependencies
-
-None.
-
-## License
-
-Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for details.
+STM32 support was removed from the Deki engine and editor in September 2026.
+This package is no longer built, listed in the registry, or installable.
+The history is kept for reference.
